@@ -1,0 +1,92 @@
+para ver la estructura ========================================
+Opción 2: usar ls -R (sin instalar nada)
+
+Si no quieres instalar nada: 
+ cd ~/F1Tenth-Repository
+ls -R
+
+
+ver solo una carpeta específica ========================================
+tree src/f1tenth_gym_ros
+
+
+======Cuando quiero algo de lectura y no nano
+cat ~/F1Tenth-Repository/src/f1tenth_gym_ros/maps/FinalMapa.yaml
+
+
+===========================Cosas importantes
+
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ echo $AMENT_PREFIX_PATH
+/home/lizbeth/go2_cun/install/go2_description:/home/lizbeth/go2_cun/install/go2_config:/home/lizbeth/go2_cun/install/champ_teleop:/home/lizbeth/go2_cun/install/champ_navigation:/home/lizbeth/go2_cun/install/champ_gazebo:/home/lizbeth/go2_cun/install/champ_bringup:/home/lizbeth/go2_cun/install/champ_base:/home/lizbeth/go2_cun/install/champ_msgs:/home/lizbeth/go2_cun/install/champ_description:/home/lizbeth/go2_cun/install/champ_config:/home/lizbeth/go2_cun/install/champ:/opt/ros/humble
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ ls ~/go2_cun/install
+ls ~/F1Tenth-Repository/install
+champ          champ_config       champ_msgs        COLCON_IGNORE    local_setup.bash  _local_setup_util_ps1.py  setup.bash  setup.zsh
+champ_base     champ_description  champ_navigation  go2_config       local_setup.ps1   _local_setup_util_sh.py   setup.ps1
+champ_bringup  champ_gazebo       champ_teleop      go2_description  local_setup.sh    local_setup.zsh           setup.sh
+COLCON_IGNORE  f110_gym         local_setup.bash  local_setup.sh            _local_setup_util_sh.py  path_planning  setup.ps1  setup.zsh
+controllers    f1tenth_gym_ros  local_setup.ps1   _local_setup_util_ps1.py  local_setup.zsh          setup.bash     setup.sh
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ ros2 pkg list | grep -E "champ|go2|nav2|map"
+champ
+champ_base
+champ_bringup
+champ_config
+champ_description
+champ_gazebo
+champ_msgs
+champ_navigation
+champ_teleop
+costmap_queue
+dummy_map_server
+go2_config
+go2_description
+map_msgs
+nav2_amcl
+nav2_behavior_tree
+nav2_behaviors
+nav2_bringup
+nav2_bt_navigator
+nav2_collision_monitor
+nav2_common
+nav2_constrained_smoother
+nav2_controller
+nav2_core
+nav2_costmap_2d
+nav2_dwb_controller
+nav2_lifecycle_manager
+nav2_map_server
+nav2_mppi_controller
+nav2_msgs
+nav2_navfn_planner
+nav2_planner
+nav2_regulated_pure_pursuit_controller
+nav2_rotation_shim_controller
+nav2_route
+nav2_rviz_plugins
+nav2_simple_commander
+nav2_smac_planner
+nav2_smoother
+nav2_theta_star_planner
+nav2_util
+nav2_velocity_smoother
+nav2_voxel_grid
+nav2_waypoint_follower
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ ros2 node list
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ cat ~/F1Tenth-Repository/src/f1tenth_gym_ros/maps/FinalMapa.yaml
+image: FinalMapa.png
+mode: trinary
+resolution: 0.05
+origin: [-8.57, -9.46, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.25
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ ls ~/F1Tenth-Repository/src/f1tenth_gym_ros/maps/
+FinalMapa.pgm  FinalMapa.yaml  levineB.yaml  levine.yaml        Spielberg_map.yaml     Spielberg_obs_map.yaml
+FinalMapa.png  levineB.png     levine.png    Spielberg_map.png  Spielberg_obs_map.png
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ ros2 pkg prefix champ_description
+/home/lizbeth/go2_cun/install/champ_description
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ env | grep ROS
+ROS_VERSION=2
+ROS_PYTHON_VERSION=3
+ROS_LOCALHOST_ONLY=0
+ROS_DISTRO=humble
+lizbeth@lizbeth-Laptop:~/F1Tenth-Repository$ 
